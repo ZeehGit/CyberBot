@@ -7,7 +7,7 @@ namespace CyberBot
 {
     class UI
     {
-        // Typing effect - prints text character by character
+        // Typing effect 
         public static void TypeText(string text, int delay = 30)
         {
             foreach (char c in text)
