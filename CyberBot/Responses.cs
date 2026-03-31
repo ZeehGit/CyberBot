@@ -66,8 +66,14 @@ namespace CyberBot
                        "  💳 Verify requests by calling the organisation directly\n" +
                        "  💳 Report suspicious activity to cybercrime.org.za";
 
-            // Default fallback
-            return $"I'm not sure about that, {userName}. Try asking me about passwords, phishing, safe browsing, or suspicious links!";
+            // Default fallback for unsupported queries
+            return $"I didn't quite understand that, {userName}. Could you rephrase?\n" +
+                   "  💡 Try asking about:\n" +
+                   "  🔒 Password safety\n" +
+                   "  🎣 Phishing scams\n" +
+                   "  🌐 Safe browsing\n" +
+                   "  ⚠️  Suspicious links\n" +
+                   "  💳 Online fraud";
         }
     }
 }

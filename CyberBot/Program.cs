@@ -44,6 +44,16 @@ namespace CyberBot
 
                 string input = (Console.ReadLine() ?? "").ToLower().Trim();
 
+                // Handle empty input
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n  ⚠️  You didn't type anything! Please enter a question.");
+                    Console.ResetColor();
+                    Thread.Sleep(2000); // pause 2 seconds so user can read it
+                    continue; // go back to top of loop
+                }
+
                 if (input == "exit")
                 {
                     Console.Clear();
