@@ -15,7 +15,7 @@ namespace CyberBot
 
             // Play voice greeting
             SoundPlayer player = new SoundPlayer("greeting.wav");
-            player.PlaySync(); // PlaySync waits for it to finish before continuing
+            player.PlaySync();
 
             Console.WriteLine("Welcome to CyberBot!");
            
@@ -43,9 +43,9 @@ namespace CyberBot
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(@"
-              [=] Phishing Detection
-              [=] Password Safety  
-              [=] Threat Awareness 
+              - Phishing Detection
+              - Password Safety  
+              - Threat Awareness 
     ");
 
             Console.ResetColor();
