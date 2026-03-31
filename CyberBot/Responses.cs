@@ -82,6 +82,40 @@ namespace CyberBot
  * Author:ChatGPT
  * Title: Code help
  * Available at: https://chatgpt.com/share/69cc1a2d-6d80-832a-937b-6d4a6a0bf556
- * Accessed date: 31 March 2026
+ * Accessed date: 30 March 2026
  */
 
+/*
+* Author:Microsoft
+* Title: Password safety
+* Available at: https://www.microsoft.com/en-za/security/business/security-101/what-is-password-protection
+* Accessed date: 30 March 2026
+*/
+
+/*
+* Author:Microsoft
+* Title: Phishing scams
+* Available at:https://support.microsoft.com/en-us/security/protect-yourself-from-phishing#:~:text=Phishing%20(pronounced:%20fishing)%20is,link%20to%20a%20phishing%20website.
+* Accessed date: 30 March 2026
+*/
+
+/*
+* Author:Google
+* Title: Safe browsing
+* Available at: https://safebrowsing.google.com/
+* Accessed date: 30 March 2026
+*/
+
+/*
+* Author:University of Denver
+* Title: Suspicious links
+* Available at: https://www.du.edu/it/services/security/5-url-warning-signs
+* Accessed date: 30 March 2026
+*/
+
+/*
+* Author:Fortinet
+* Title: Online fraud
+* Available at: https://www.fortinet.com/uk/resources/cyberglossary/internet-fraud
+* Accessed date: 30 March 2026
+*/
