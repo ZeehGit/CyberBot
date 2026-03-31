@@ -37,7 +37,7 @@ namespace CyberBot
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("  ╔══════════════════════════════════════════════╗");
-            Console.WriteLine($"  ║  {title,-44}║");
+            Console.WriteLine($"  ║  {title,-45}║");
             Console.WriteLine("  ╚══════════════════════════════════════════════╝");
             Console.ResetColor();
         }

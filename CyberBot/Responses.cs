@@ -77,3 +77,11 @@ namespace CyberBot
         }
     }
 }
+
+/*
+ * Author:ChatGPT
+ * Title: Code help
+ * Available at: https://chatgpt.com/share/69cc1a2d-6d80-832a-937b-6d4a6a0bf556
+ * Accessed date: 31 March 2026
+ */
+

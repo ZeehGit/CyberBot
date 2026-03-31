@@ -61,7 +61,7 @@ namespace CyberBot
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("\n  ╔══════════════════════════════════════════════╗");
-                    Console.WriteLine($"  ║  Goodbye, {userName,-37}║");
+                    Console.WriteLine($"  ║  Goodbye, {userName,-35}║");
                     Console.WriteLine("  ║  Stay safe online! 🛡️                        ║");
                     Console.WriteLine("  ╚══════════════════════════════════════════════╝");
                     Console.ResetColor();
@@ -196,3 +196,24 @@ namespace CyberBot
         }
     }
 }
+
+/*
+ * Author:ChatGPT
+ * Title: Code help
+ * Available at: https://chatgpt.com/share/69cc1a2d-6d80-832a-937b-6d4a6a0bf556
+ * Accessed date: 30 March 2026
+ */
+
+/*
+* Author:Microsoft
+* Title: Thread.Sleep Method
+* Available at: https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.sleep?view=net-10.0
+* Accessed date: 30 March 2026
+*/
+
+/*
+* Author:Microsoft
+* Title: SoundPlayer Class
+* Available at: https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer?view=windowsdesktop-10.0
+* Accessed date: 30 March 2026
+*/
