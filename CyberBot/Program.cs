@@ -15,8 +15,10 @@ namespace CyberBot
             DisplayLogo();
 
             // 2. Play voice greeting
+#pragma warning disable CA1416
             SoundPlayer player = new SoundPlayer("greeting.wav");
             player.PlaySync();
+#pragma warning restore CA1416
 
             // 3. Greet user and get their name
             string userName = GreetUser();
@@ -76,55 +78,22 @@ namespace CyberBot
             }
         }
 
-        static void DisplayHomePage(string userName)
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(@"
-  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗  ██████╗ ████████╗
- ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝
- ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║   ██║   
- ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║   ██║   ██║   
- ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝╚██████╔╝   ██║   
-  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝   ╚═╝   
-            ");
-            Console.ResetColor();
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("  ╔══════════════════════════════════════════════╗");
-            Console.WriteLine($"  ║  Welcome back, {userName,-31}║");
-            Console.WriteLine("  ║  What would you like to know today?         ║");
-            Console.WriteLine("  ╠══════════════════════════════════════════════╣");
-            Console.WriteLine("  ║  Topics you can ask about:                  ║");
-            Console.WriteLine("  ║    🔒 Password safety                       ║");
-            Console.WriteLine("  ║    🎣 Phishing scams                        ║");
-            Console.WriteLine("  ║    🌐 Safe browsing                         ║");
-            Console.WriteLine("  ║    ⚠️  Suspicious links                      ║");
-            Console.WriteLine("  ║    💳 Online fraud                          ║");
-            Console.WriteLine("  ║                                              ║");
-            Console.WriteLine("  ║  Type 'exit' to quit.                       ║");
-            Console.WriteLine("  ╚══════════════════════════════════════════════╝");
-            Console.ResetColor();
-        }
-
         static void DisplayAnswerScreen(string userName, string question, string response)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\n  ╔══════════════════════════════════════════════╗");
-            Console.WriteLine("  ║              🛡️  CYBERBOT RESPONSE           ║");
-            Console.WriteLine("  ╚══════════════════════════════════════════════╝\n");
-            Console.ResetColor();
+            UI.PrintHeader("🛡️  CYBERBOT RESPONSE");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"  You asked: {question}\n");
+            UI.TypeText($"  You asked: {question}");
             Console.ResetColor();
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"  CyberBot: {response}");
-            Console.ResetColor();
+            UI.PrintDivider();
 
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\n  ══════════════════════════════════════════════");
-            Console.ResetColor();
+            // Simulate thinking
+            UI.PrintLoading();
+
+            UI.PrintBotResponse(response);
+
+            UI.PrintDivider();
         }
 
         static void CountdownReturn()
@@ -159,6 +128,36 @@ namespace CyberBot
          ║    Keeping South Africa Cyber Safe!      ║
          ╚══════════════════════════════════════════╝
             ");
+            Console.ResetColor();
+        }
+
+        static void DisplayHomePage(string userName)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(@"
+  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗  ██████╗ ████████╗
+ ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝
+ ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║   ██║   
+ ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║   ██║   ██║   
+ ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝╚██████╔╝   ██║   
+  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝   ╚═╝   
+    ");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("  ╔══════════════════════════════════════════════╗");
+            Console.WriteLine($"  ║  Welcome back, {userName,-31}║");
+            Console.WriteLine("  ║  What would you like to know today?         ║");
+            Console.WriteLine("  ╠══════════════════════════════════════════════╣");
+            Console.WriteLine("  ║  Topics you can ask about:                  ║");
+            Console.WriteLine("  ║    🔒 Password safety                       ║");
+            Console.WriteLine("  ║    🎣 Phishing scams                        ║");
+            Console.WriteLine("  ║    🌐 Safe browsing                         ║");
+            Console.WriteLine("  ║    ⚠️  Suspicious links                      ║");
+            Console.WriteLine("  ║    💳 Online fraud                          ║");
+            Console.WriteLine("  ║                                              ║");
+            Console.WriteLine("  ║  Type 'exit' to quit.                       ║");
+            Console.WriteLine("  ╚══════════════════════════════════════════════╝");
             Console.ResetColor();
         }
 
