@@ -100,8 +100,15 @@ namespace CyberBot
 }
 
 /*
-* Author:
-* Title: 
-* Available at:
-* Accessed date: 
+* Author: Microsoft
+* Title: Console.ForegroundColor Property
+* Available at: https://learn.microsoft.com/en-us/dotnet/api/system.console.foregroundcolor?view=net-10.0
+* Accessed date: 31 March 2026
+*/
+
+/*
+* Author: Microsoft
+* Title: Console.WriteLine Method
+* Available at: https://learn.microsoft.com/en-us/dotnet/api/system.console.writeline?view=net-10.0
+* Accessed date: 31 March 2026
 */
