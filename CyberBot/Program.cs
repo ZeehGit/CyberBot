@@ -61,7 +61,7 @@ namespace CyberBot
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("\n  ╔══════════════════════════════════════════════╗");
-                    Console.WriteLine($"  ║  Goodbye, {userName,-36}║");
+                    Console.WriteLine($"  ║  Goodbye, {userName,-37}║");
                     Console.WriteLine("  ║  Stay safe online! 🛡️                        ║");
                     Console.WriteLine("  ╚══════════════════════════════════════════════╝");
                     Console.ResetColor();
@@ -145,19 +145,19 @@ namespace CyberBot
             Console.ResetColor();
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("  ╔══════════════════════════════════════════════╗");
-            Console.WriteLine($"  ║  Welcome back, {userName,-31}║");
-            Console.WriteLine("  ║  What would you like to know today?         ║");
-            Console.WriteLine("  ╠══════════════════════════════════════════════╣");
-            Console.WriteLine("  ║  Topics you can ask about:                  ║");
-            Console.WriteLine("  ║    🔒 Password safety                       ║");
-            Console.WriteLine("  ║    🎣 Phishing scams                        ║");
-            Console.WriteLine("  ║    🌐 Safe browsing                         ║");
-            Console.WriteLine("  ║    ⚠️  Suspicious links                      ║");
-            Console.WriteLine("  ║    💳 Online fraud                          ║");
-            Console.WriteLine("  ║                                              ║");
-            Console.WriteLine("  ║  Type 'exit' to quit.                       ║");
-            Console.WriteLine("  ╚══════════════════════════════════════════════╝");
+            Console.WriteLine("  ══════════════════════════════════════════════");
+            Console.WriteLine($"    Welcome back, {userName,-31} ");
+            Console.WriteLine("    What would you like to know today?         ");
+            Console.WriteLine("  ══════════════════════════════════════════════");
+            Console.WriteLine("    Topics you can ask about:                   ");
+            Console.WriteLine("      🔒 Password safety                       ");
+            Console.WriteLine("      🎣 Phishing scams                        ");
+            Console.WriteLine("      🌐 Safe browsing                         ");
+            Console.WriteLine("      ⚠️  Suspicious links                     ");
+            Console.WriteLine("      💳 Online fraud                           ");
+            Console.WriteLine("                                               ");
+            Console.WriteLine("    Type 'exit' to quit.                       ");
+            Console.WriteLine("  ══════════════════════════════════════════════");
             Console.ResetColor();
         }
 
@@ -180,16 +180,16 @@ namespace CyberBot
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n╔══════════════════════════════════════════════╗");
-            Console.WriteLine($"║  Hello, {name,-38}║");
-            Console.WriteLine("║  I'm here to help you stay safe online.      ║");
-            Console.WriteLine("║  Together we'll explore:                     ║");
-            Console.WriteLine("║    🔒 Phishing scams                         ║");
-            Console.WriteLine("║    🔑 Password safety                        ║");
-            Console.WriteLine("║    🌐 Safe browsing                         ║");
-            Console.WriteLine("║    ⚠️  Suspicious links                      ║");
-            Console.WriteLine("║    💳 Online fraud                          ║");
-            Console.WriteLine("╚══════════════════════════════════════════════╝");
+            Console.WriteLine("\n══════════════════════════════════════════════");
+            Console.WriteLine($"  Hello, {name}!!");
+            Console.WriteLine("  I'm here to help you stay safe online.      ");
+            Console.WriteLine("  Together we'll explore:                     ");
+            Console.WriteLine("    🔒 Phishing scams                         ");
+            Console.WriteLine("    🔑 Password safety                        ");
+            Console.WriteLine("    🌐 Safe browsing                         ");
+            Console.WriteLine("    ⚠️  Suspicious links                      ");
+            Console.WriteLine("    💳 Online fraud                          ");
+            Console.WriteLine("══════════════════════════════════════════════");
             Console.ResetColor();
 
             return name;
