@@ -1,79 +1,129 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace CyberBot
 {
-    class Responses
+    public static class Responses
     {
-        public static string GetResponse(string input, string userName)
+        // (GeeksforGeeks, 2023) - using arrays for random responses
+        private static readonly Random random = new Random();
+
+        private static readonly string[] phishingResponses =
         {
+            $"Watch out for urgent emails asking you to click a link immediately — this is a classic phishing tactic!",
+            "Always check the sender's email address. Scammers disguise themselves as trusted organisations.",
+            "Never enter your password on a site you reached by clicking an email link. Go directly to the website instead.",
+            "Phishing messages often contain spelling mistakes and generic greetings like 'Dear Customer'.",
+            "Be cautious of emails offering prizes or threatening account suspension — these are common phishing tricks."
+        };
+
+        private static readonly string[] passwordResponses =
+        {
+            "Use at least 12 characters mixing uppercase, lowercase, numbers and symbols for a strong password.",
+            "Never reuse the same password across multiple sites — if one gets breached, all accounts are at risk.",
+            "Consider using a password manager like Bitwarden or 1Password to generate and store strong passwords.",
+            "A passphrase like 'BlueSky$River99' is both strong and easier to remember than random characters.",
+            "Enable two-factor authentication wherever possible for an extra layer of security."
+        };
+
+        private static readonly string[] browsingResponses =
+        {
+            "Always check for 'https://' and a padlock icon before entering personal information on a website.",
+            "Avoid using public Wi-Fi for banking or shopping — use a VPN if you must connect to public networks.",
+            "Keep your browser and extensions updated to protect against known vulnerabilities.",
+            "Use a trusted antivirus program and make sure it stays updated.",
+            "Be careful what browser extensions you install — some can steal your data."
+        };
+
+        // (Microsoft, 2023) - Dictionary for keyword mapping
+        private static readonly Dictionary<string, string> memoryStore = new Dictionary<string, string>();
+
+        public static string GetResponse(string input, string userName, string lastTopic, out string detectedTopic)
+        {
+            detectedTopic = lastTopic;
+
+            // Q5 - Memory: store interest
+            if (input.Contains("i am interested in") || input.Contains("i'm interested in"))
+            {
+                string topic = input.Replace("i am interested in", "").Replace("i'm interested in", "").Trim();
+                memoryStore[userName] = topic;
+                detectedTopic = topic;
+                return $"Great! I'll remember that you're interested in {topic}, {userName}. It's a crucial part of staying safe online.";
+            }
+
+            // Q5 - Memory: recall interest
+            if (input.Contains("what do i like") || input.Contains("what am i interested in"))
+            {
+                if (memoryStore.ContainsKey(userName))
+                    return $"As someone interested in {memoryStore[userName]}, {userName}, you might want to review your account security settings regularly.";
+                return $"I don't have any saved interests for you yet, {userName}. Tell me what cybersecurity topic interests you!";
+            }
+
             // General questions
             if (input.Contains("how are you"))
-                return $"I'm running at full security, {userName}! Ready to help you stay cyber safe. 😊";
+            {
+                detectedTopic = "general";
+                return $"I'm running at full security, {userName}! Ready to help you stay cyber safe.";
+            }
 
             if (input.Contains("what is your purpose") || input.Contains("what's your purpose"))
-                return $"My purpose is to educate you on cybersecurity threats, {userName}. I can help you recognise phishing scams, create strong passwords, and browse safely online.";
+            {
+                detectedTopic = "general";
+                return $"My purpose is to educate you on cybersecurity threats, {userName}. I help with phishing, passwords, safe browsing and more!";
+            }
+
+            if (input.Contains("who are you") || input.Contains("your name"))
+            {
+                detectedTopic = "general";
+                return "I'm CyberBot, your Cybersecurity Awareness Assistant!";
+            }
 
             if (input.Contains("what can i ask") || input.Contains("help") || input.Contains("topics"))
-                return $"You can ask me about:\n" +
-                       "  🔒 Password safety\n" +
-                       "  🎣 Phishing scams\n" +
-                       "  🌐 Safe browsing\n" +
-                       "  ⚠️  Suspicious links\n" +
-                       "  💳 Online fraud";
+            {
+                detectedTopic = "general";
+                return $"You can ask me about:\n🔒 Password safety\n🎣 Phishing\n🌐 Safe browsing\n⚠️ Suspicious links\n💳 Online fraud\n🔐 Privacy";
+            }
 
-            if (input.Contains("your name") || input.Contains("who are you"))
-                return "I'm CyberBot, your Cybersecurity Awareness Assistant! 🤖🛡️";
-
-            // Password safety
-            if (input.Contains("password"))
-                return $"Here are some password safety tips, {userName}:\n" +
-                       "  ✅ Use at least 12 characters\n" +
-                       "  ✅ Mix uppercase, lowercase, numbers and symbols\n" +
-                       "  ✅ Never reuse passwords across sites\n" +
-                       "  ✅ Use a password manager\n" +
-                       "  ❌ Never share your password with anyone";
-
-            // Phishing
+            // Q2 + Q3 - Keyword recognition with random responses
             if (input.Contains("phishing") || input.Contains("phish"))
-                return $"Phishing is when attackers trick you into revealing personal info, {userName}. Watch out for:\n" +
-                       "  ⚠️  Urgent or threatening emails\n" +
-                       "  ⚠️  Suspicious sender addresses\n" +
-                       "  ⚠️  Links that don't match the website name\n" +
-                       "  ⚠️  Requests for passwords or banking details";
+            {
+                detectedTopic = "phishing";
+                return phishingResponses[random.Next(phishingResponses.Length)];
+            }
 
-            // Safe browsing
+            if (input.Contains("password"))
+            {
+                detectedTopic = "password";
+                return passwordResponses[random.Next(passwordResponses.Length)];
+            }
+
             if (input.Contains("browsing") || input.Contains("browse") || input.Contains("internet") || input.Contains("website"))
-                return $"Safe browsing tips for you, {userName}:\n" +
-                       "  🌐 Always check for 'https://' before entering personal info\n" +
-                       "  🌐 Avoid public Wi-Fi for banking or shopping\n" +
-                       "  🌐 Keep your browser updated\n" +
-                       "  🌐 Use a trusted antivirus program";
+            {
+                detectedTopic = "browsing";
+                return browsingResponses[random.Next(browsingResponses.Length)];
+            }
 
-            // Suspicious links
             if (input.Contains("link") || input.Contains("url") || input.Contains("suspicious"))
-                return $"Before clicking any link, {userName}:\n" +
-                       "  🔍 Hover over it to preview the real URL\n" +
-                       "  🔍 Check for misspellings (e.g. 'amaz0n.com')\n" +
-                       "  🔍 Don't click links from unknown senders\n" +
-                       "  🔍 Use a link checker like virustotal.com";
+            {
+                detectedTopic = "links";
+                return $"Before clicking any link, {userName}: Hover over it to preview the real URL, check for misspellings like 'amaz0n.com', and use virustotal.com to scan it.";
+            }
 
-            // Online fraud
             if (input.Contains("fraud") || input.Contains("scam"))
-                return $"To protect yourself from online fraud, {userName}:\n" +
-                       "  💳 Never share banking details via email or SMS\n" +
-                       "  💳 Verify requests by calling the organisation directly\n" +
-                       "  💳 Report suspicious activity to cybercrime.org.za";
+            {
+                detectedTopic = "fraud";
+                return $"To protect yourself from online fraud, {userName}: Never share banking details via email or SMS, and report suspicious activity to cybercrime.org.za";
+            }
 
-            // Default fallback for unsupported queries
-            return $"I didn't quite understand that, {userName}. Could you rephrase?\n" +
-                   "  💡 Try asking about:\n" +
-                   "  🔒 Password safety\n" +
-                   "  🎣 Phishing scams\n" +
-                   "  🌐 Safe browsing\n" +
-                   "  ⚠️  Suspicious links\n" +
-                   "  💳 Online fraud";
+            if (input.Contains("privacy"))
+            {
+                detectedTopic = "privacy";
+                return $"Great topic, {userName}! I'll remember that you're interested in privacy. Review your social media settings regularly and use strong, unique passwords for each account.";
+            }
+
+            // Q7 - Default fallback for unrecognised input
+            detectedTopic = lastTopic;
+            return $"I'm not sure I understand that, {userName}. Could you try rephrasing? You can ask about passwords, phishing, safe browsing, suspicious links, or online fraud.";
         }
     }
 }

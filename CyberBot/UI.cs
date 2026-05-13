@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Threading;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace CyberBot
 {
-    class UI
+    internal class UI
     {
         // Typing effect 
         public static void TypeText(string text, int delay = 30)
