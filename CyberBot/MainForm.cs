@@ -26,6 +26,19 @@ namespace CyberBot
             this.Size = new Size(900, 700);
             this.MinimumSize = new Size(900, 700);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Resize += (s, e) =>
+            {
+                namePanel.Location = new Point(
+                    (this.ClientSize.Width - namePanel.Width) / 2,
+                    (this.ClientSize.Height - namePanel.Height) / 2
+                );
+            };
+
+            // Initial centering
+            namePanel.Location = new Point(
+                (this.ClientSize.Width - namePanel.Width) / 2,
+                (this.ClientSize.Height - namePanel.Height) / 2
+            );
         }
 
         // Q1 - Voice greeting on launch

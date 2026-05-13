@@ -57,7 +57,7 @@
             headerPanel.Name = "headerPanel";
             headerPanel.Padding = new Padding(10);
             headerPanel.Size = new Size(947, 130);
-            headerPanel.TabIndex = 4;
+            this.headerPanel.Height = 160;
             // 
             // subtitleLabel
             // 
@@ -73,15 +73,13 @@
             // 
             // logoLabel
             // 
-            logoLabel.Dock = DockStyle.Top;
-            logoLabel.Font = new Font("Courier New", 16F, FontStyle.Bold);
-            logoLabel.ForeColor = Color.Cyan;
-            logoLabel.Location = new Point(10, 10);
-            logoLabel.Name = "logoLabel";
-            logoLabel.Size = new Size(927, 60);
-            logoLabel.TabIndex = 1;
-            logoLabel.Text = "█▀▀ █▄█ █▄▄ █▀▀ █▀█ █▄▄ █▀█ ▀█▀";
-            logoLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.logoLabel.Text = "  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗  ██████╗ ████████╗\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║   ██║\n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║   ██║   ██║\n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝╚██████╔╝   ██║\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝   ╚═╝";
+            this.logoLabel.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold);
+            this.logoLabel.ForeColor = System.Drawing.Color.Cyan;
+            this.logoLabel.AutoSize = false;
+            this.logoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.logoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logoLabel.Height = 110;
             // 
             // chatPanel
             // 
