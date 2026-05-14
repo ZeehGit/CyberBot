@@ -4,6 +4,10 @@ using System.Text;
 
 namespace CyberBot
 {
+    // summary
+    // Manages conversation flow and follow-up question handling.
+    // Allows users to request more details without restarting the conversation.
+    // (Microsoft, 2023) - conversational state management
     public static class ConversationFlow
     {
         // (Microsoft, 2023) - handling follow-up conversation

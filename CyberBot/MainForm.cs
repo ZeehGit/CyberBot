@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace CyberBot
 {
+    // summary
+    // Main GUI form for CyberBot.
+    // Handles all user interaction, display logic and coordinates
+    // between Responses, SentimentDetector and ConversationFlow classes.
     public partial class MainForm : Form
     {
         // (Baeldung, 2023) - storing user session data as fields

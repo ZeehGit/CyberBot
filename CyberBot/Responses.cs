@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace CyberBot
 {
+    // summary
+    // Handles all chatbot keyword recognition and response logic.
+    // Uses arrays for random responses and a dictionary for memory recall.
+    // (Microsoft, 2023) - Dictionary and List data structures
     public static class Responses
     {
         // (GeeksforGeeks, 2023) - using arrays for random responses
