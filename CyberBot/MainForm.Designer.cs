@@ -234,3 +234,10 @@
         }
     }
 }
+
+/*
+ * Author: Microsoft
+ * Title: Windows Forms Overview
+ * Available at: https://learn.microsoft.com/en-us/dotnet/desktop/winforms/overview
+ * Accessed date: 13 May 2026
+ */

@@ -40,3 +40,10 @@ namespace CyberBot
         }
     }
 }
+
+/*
+ * Author: GeeksforGeeks
+ * Title: Switch Statement in C#
+ * Available at: https://www.geeksforgeeks.org/switch-statement-in-c-sharp
+ * Accessed date: 13 May 2026
+ */

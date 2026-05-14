@@ -191,3 +191,17 @@ namespace CyberBot
         }
     }
 }
+
+/*
+ * Author: Microsoft
+ * Title: SoundPlayer Class
+ * Available at: https://learn.microsoft.com/en-us/dotnet/api/system.media.soundplayer
+ * Accessed date: 13 May 2026
+ */
+
+/*
+* Author: Microsoft
+* Title: Exception Handling in C#
+* Available at: https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions
+* Accessed date: 13 May 2026
+*/

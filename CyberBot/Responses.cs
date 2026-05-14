@@ -173,3 +173,31 @@ namespace CyberBot
 * Available at: https://www.fortinet.com/uk/resources/cyberglossary/internet-fraud
 * Accessed date: 30 March 2026
 */
+
+/*
+ * Author: Microsoft
+ * Title: String.Contains Method
+ * Available at: https://learn.microsoft.com/en-us/dotnet/api/system.string.contains
+ * Accessed date: 13 May 2026
+ */
+
+/*
+* Author: Microsoft
+* Title: Random Class
+* Available at: https://learn.microsoft.com/en-us/dotnet/api/system.random
+* Accessed date: 13 May 2026
+*/
+
+/*
+ * Author: Microsoft
+ * Title: Dictionary Class
+ * Available at: https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2
+ * Accessed date: 13 May 2026
+ */
+
+/*
+* Author: Microsoft
+* Title: Object Oriented Programming in C#
+* Available at: https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/tutorials/oop
+* Accessed date: 13 May 2026
+*/

@@ -32,3 +32,10 @@ namespace CyberBot
         }
     }
 }
+
+/*
+ * Author: GeeksforGeeks
+ * Title: Sentiment Analysis in C#
+ * Available at: https://www.geeksforgeeks.org/c-sharp-string-contains-method
+ * Accessed date: 13 May 2026
+ */
