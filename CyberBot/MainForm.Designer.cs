@@ -28,6 +28,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             headerPanel = new Panel();
             subtitleLabel = new Label();
             logoLabel = new Label();
@@ -55,40 +56,43 @@
             headerPanel.Dock = DockStyle.Top;
             headerPanel.Location = new Point(0, 0);
             headerPanel.Name = "headerPanel";
-            headerPanel.Padding = new Padding(10);
-            headerPanel.Size = new Size(947, 130);
-            this.headerPanel.Height = 160;
+            headerPanel.Size = new Size(947, 160);
+            headerPanel.TabIndex = 4;
             // 
             // subtitleLabel
             // 
             subtitleLabel.Dock = DockStyle.Bottom;
             subtitleLabel.Font = new Font("Courier New", 9F);
             subtitleLabel.ForeColor = Color.FromArgb(0, 200, 100);
-            subtitleLabel.Location = new Point(10, 80);
+            subtitleLabel.Location = new Point(0, 125);
             subtitleLabel.Name = "subtitleLabel";
-            subtitleLabel.Size = new Size(927, 40);
+            subtitleLabel.Size = new Size(947, 35);
             subtitleLabel.TabIndex = 0;
             subtitleLabel.Text = "━━━  Cybersecurity Awareness Assistant  |  Keeping South Africa Cyber Safe  ━━━";
             subtitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // logoLabel
             // 
-            this.logoLabel.Text = "  ██████╗██╗   ██╗██████╗ ███████╗██████╗ ██████╗  ██████╗ ████████╗\n ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝\n ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝██████╔╝██║   ██║   ██║\n ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗██╔══██╗██║   ██║   ██║\n ╚██████╗   ██║   ██████╔╝███████╗██║  ██║██████╔╝╚██████╔╝   ██║\n  ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝   ╚═╝";
-            this.logoLabel.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Bold);
-            this.logoLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.logoLabel.AutoSize = false;
-            this.logoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.logoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoLabel.Height = 110;
+            logoLabel.Dock = DockStyle.Top;
+            logoLabel.Font = new Font("Courier New", 9F, FontStyle.Bold);
+            logoLabel.ForeColor = Color.Cyan;
+            logoLabel.Location = new Point(0, 0);
+            logoLabel.Name = "logoLabel";
+            logoLabel.Padding = new Padding(0, 10, 0, 0);
+            logoLabel.Size = new Size(947, 100);
+            logoLabel.TabIndex = 1;
+            logoLabel.Text = resources.GetString("logoLabel.Text");
+            logoLabel.TextAlign = ContentAlignment.MiddleCenter;
+            logoLabel.Click += logoLabel_Click;
             // 
             // chatPanel
             // 
             chatPanel.Controls.Add(chatBox);
             chatPanel.Dock = DockStyle.Fill;
-            chatPanel.Location = new Point(0, 130);
+            chatPanel.Location = new Point(0, 160);
             chatPanel.Name = "chatPanel";
             chatPanel.Padding = new Padding(10);
-            chatPanel.Size = new Size(947, 465);
+            chatPanel.Size = new Size(947, 395);
             chatPanel.TabIndex = 1;
             chatPanel.Visible = false;
             // 
@@ -103,7 +107,7 @@
             chatBox.Name = "chatBox";
             chatBox.ReadOnly = true;
             chatBox.ScrollBars = RichTextBoxScrollBars.Vertical;
-            chatBox.Size = new Size(927, 445);
+            chatBox.Size = new Size(927, 375);
             chatBox.TabIndex = 0;
             chatBox.Text = "";
             // 
@@ -113,10 +117,10 @@
             inputPanel.Controls.Add(sendButton);
             inputPanel.Controls.Add(inputBox);
             inputPanel.Dock = DockStyle.Bottom;
-            inputPanel.Location = new Point(0, 595);
+            inputPanel.Location = new Point(0, 555);
             inputPanel.Name = "inputPanel";
             inputPanel.Padding = new Padding(10, 8, 10, 8);
-            inputPanel.Size = new Size(947, 60);
+            inputPanel.Size = new Size(947, 100);
             inputPanel.TabIndex = 2;
             inputPanel.Visible = false;
             // 
@@ -129,14 +133,14 @@
             sendButton.ForeColor = Color.Black;
             sendButton.Location = new Point(837, 8);
             sendButton.Name = "sendButton";
-            sendButton.Size = new Size(100, 44);
+            sendButton.Size = new Size(100, 84);
             sendButton.TabIndex = 0;
             sendButton.Text = "Send";
             sendButton.UseVisualStyleBackColor = false;
             sendButton.Click += SendButton_Click;
-            
+            // 
             // inputBox
-            
+            // 
             inputBox.BackColor = Color.FromArgb(13, 17, 23);
             inputBox.BorderStyle = BorderStyle.FixedSingle;
             inputBox.Dock = DockStyle.Fill;
@@ -157,8 +161,9 @@
             namePanel.Controls.Add(nameLabel);
             namePanel.Location = new Point(250, 250);
             namePanel.Name = "namePanel";
-            namePanel.Size = new Size(400, 180);
+            namePanel.Size = new Size(494, 237);
             namePanel.TabIndex = 0;
+            namePanel.Paint += namePanel_Paint;
             // 
             // startButton
             // 
@@ -166,9 +171,9 @@
             startButton.FlatStyle = FlatStyle.Flat;
             startButton.Font = new Font("Courier New", 10F, FontStyle.Bold);
             startButton.ForeColor = Color.Black;
-            startButton.Location = new Point(60, 120);
+            startButton.Location = new Point(60, 135);
             startButton.Name = "startButton";
-            startButton.Size = new Size(280, 40);
+            startButton.Size = new Size(380, 45);
             startButton.TabIndex = 0;
             startButton.Text = "Start Chat";
             startButton.UseVisualStyleBackColor = false;
@@ -180,9 +185,9 @@
             nameBox.BorderStyle = BorderStyle.FixedSingle;
             nameBox.Font = new Font("Courier New", 11F);
             nameBox.ForeColor = Color.White;
-            nameBox.Location = new Point(60, 70);
+            nameBox.Location = new Point(60, 80);
             nameBox.Name = "nameBox";
-            nameBox.Size = new Size(280, 28);
+            nameBox.Size = new Size(380, 28);
             nameBox.TabIndex = 1;
             // 
             // nameLabel
@@ -191,7 +196,7 @@
             nameLabel.ForeColor = Color.Cyan;
             nameLabel.Location = new Point(10, 20);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(380, 40);
+            nameLabel.Size = new Size(480, 40);
             nameLabel.TabIndex = 2;
             nameLabel.Text = "Welcome! Please enter your name:";
             nameLabel.TextAlign = ContentAlignment.MiddleCenter;

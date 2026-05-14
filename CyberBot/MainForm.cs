@@ -179,5 +179,15 @@ namespace CyberBot
             chatBox.AppendText("─────────────────────────────────────────\n");
             chatBox.SelectionColor = chatBox.ForeColor;
         }
+
+        private void logoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void namePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
