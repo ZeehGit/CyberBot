@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CyberBot
+namespace CyberBot //code
 {
     // summary
     // Manages conversation flow and follow-up question handling.
